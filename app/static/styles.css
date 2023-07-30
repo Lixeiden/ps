@@ -1,0 +1,35 @@
+body, input, select, textarea, label {
+  background-color: black;
+  color: #FFD700;
+  font-size: 150%;
+}
+
+input, select, textarea {
+    border: medium dashed #FFD700;
+    color: red;
+}
+
+input[type="submit"], select {
+    border: thin solid #FFD700;
+}
+
+input::placeholder {
+    opacity: 0.2;
+}
+
+span {
+    white-space: pre-wrap
+}
+
+h1 {
+    color: red;
+}
+
+form {
+    display: inline-block;
+    margin: 10px;
+}
+
+textarea {
+    border: medium dashed #FFD700;
+}
