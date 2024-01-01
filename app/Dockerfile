@@ -7,7 +7,6 @@ COPY . .
 RUN go mod download && go mod verify
 RUN CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -v -o ps_server
 
-
 # Start the second stage (the final image)
 FROM debian:buster-slim
 
@@ -20,5 +19,7 @@ COPY --from=builder /build/ps_server /app/ps_server
 COPY --from=builder /build/templates /app/templates
 COPY --from=builder /build/static /app/static
 COPY --from=builder /build/pst /app/pst
+
+EXPOSE 8080
 
 CMD ["/app/ps_server"]
