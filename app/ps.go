@@ -144,7 +144,7 @@ func main() {
 		}
 
 		// If the file is found, sends it as a response
-		c.Data(http.StatusOK, "text/plain", content)
+        c.Data(http.StatusOK, "text/plain; charset=utf-8", content)
 	})
 
 	// Listen on 0.0.0.0:8080 by default
