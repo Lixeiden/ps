@@ -127,11 +127,11 @@ func main() {
 		}
 
 		// Redirects the client to the newly created paste
-		c.Redirect(http.StatusSeeOther, "/view/"+name)
+		c.Redirect(http.StatusSeeOther, "/v/"+name)
 	})
 
 	// Sets up a route for viewing a paste
-	r.GET("/view/:name", func(c *gin.Context) {
+	r.GET("/v/:name", func(c *gin.Context) {
 		// Retrieves the file name from the URL parameters and sanitizes it
 		name := sanitizeFileName(c.Param("name"))
 		// Tries to read the paste file
